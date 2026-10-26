@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applicant Data Entry Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f3f5f8; }
+        .form-container { border: none; border-radius: 16px; box-shadow: 0 12px 28px rgba(0,0,0,0.06); }
+        .group-header { border-left: 4px solid #113060; padding-left: 10px; color: #113060; font-weight: 700; margin-bottom: 20px; margin-top: 30px; }
+    </style>
+</head>
+<body>
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-11">
+                <div class="card form-container p-4 p-md-5 bg-white">
+                    
+                    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center pb-3 mb-4 border-bottom">
+                        <div>
+                            <h2 class="fw-bold text-dark m-0">Evaluation Entry Form</h2>
+                            <p class="text-muted m-0 small">Fields pass directly to serialized scikit-learn preprocessing pipelines.</p>
+                        </div>
+                        <a href="/" class="btn btn-outline-secondary btn-sm mt-2 mt-sm-0">&larr; Return Dashboard</a>
+                    </div>
+
+                    <form action="/predict" method="POST">
+                        
+                        <h5 class="group-header text-uppercase tracking-wider small">1. Cleaned Demographic Encodings</h5>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="CODE_GENDER" class="form-label fw-semibold">Gender Label</label>
+                                <select class="form-select" id="CODE_GENDER" name="CODE_GENDER" required>
+                                    <option value="" disabled selected>Choose Label Option</option>
+                                    <option value="0">Female (0)</option>
+                                    <option value="1">Male (1)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="FLAG_OWN_CAR" class="form-label fw-semibold">Car Ownership Status</label>
+                                <select class="form-select" id="FLAG_OWN_CAR" name="FLAG_OWN_CAR" required>
+                                    <option value="" disabled selected>Does applicant own vehicle?</option>
+                                    <option value="1">Yes (1)</option>
+                                    <option value="0">No (0)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="FLAG_OWN_REALTY" class="form-label fw-semibold">Realty Assets Status</label>
+                                <select class="form-select" id="FLAG_OWN_REALTY" name="FLAG_OWN_REALTY" required>
+                                    <option value="" disabled selected>Does applicant own real estate?</option>
+                                    <option value="1">Yes (1)</option>
+                                    <option value="0">No (0)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="NAME_INCOME_TYPE" class="form-label fw-semibold">Income Stream Configuration</label>
+                                <select class="form-select" id="NAME_INCOME_TYPE" name="NAME_INCOME_TYPE" required>
+                                    <option value="" disabled selected>Select clean income mapping</option>
+                                    <option value="1">Working (1)</option>
+                                    <option value="2">Commercial Associate (2)</option>
+                                    <option value="3">Pensioner (3)</option>
+                                    <option value="4">State Servant (4)</option>
+                                    <option value="5">Student (5)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="NAME_EDUCATION_TYPE" class="form-label fw-semibold">Education Level Class</label>
+                                <select class="form-select" id="NAME_EDUCATION_TYPE" name="NAME_EDUCATION_TYPE" required>
+                                    <option value="" disabled selected>Select clean degree mapping</option>
+                                    <option value="1">Secondary / Secondary Special (1)</option>
+                                    <option value="2">Higher Education (2)</option>
+                                    <option value="3">Incomplete Higher (3)</option>
+                                    <option value="4">Lower Secondary (4)</option>
+                                    <option value="5">Academic Degree (5)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="NAME_FAMILY_STATUS" class="form-label fw-semibold">Civil Family Condition</label>
+                                <select class="form-select" id="NAME_FAMILY_STATUS" name="NAME_FAMILY_STATUS" required>
+                                    <option value="" disabled selected>Select current family mapping</option>
+                                    <option value="1">Married (1)</option>
+                                    <option value="2">Single / Not Married (2)</option>
+                                    <option value="3">Civil Marriage (3)</option>
+                                    <option value="4">Separated (4)</option>
+                                    <option value="5">Widow (5)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="NAME_HOUSING_TYPE" class="form-label fw-semibold">Housing Operational Matrix</label>
+                                <select class="form-select" id="NAME_HOUSING_TYPE" name="NAME_HOUSING_TYPE" required>
+                                    <option value="" disabled selected>Select clear asset mapping</option>
+                                    <option value="1">House / Apartment (1)</option>
+                                    <option value="2">Rented Apartment (2)</option>
+                                    <option value="3">With Parents (3)</option>
+                                    <option value="4">Municipal Apartment (4)</option>
+                                    <option value="5">Office Apartment (5)</option>
+                                    <option value="6">Co-op Apartment (6)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="OCCUPATION_TYPE" class="form-label fw-semibold">Occupation Profile Group</label>
+                                <select class="form-select" id="OCCUPATION_TYPE" name="OCCUPATION_TYPE" required>
+                                    <option value="" disabled selected>Select Encoded Job Cluster</option>
+                                    <option value="0">Laborers</option>
+                                    <option value="1">Core staff</option>
+                                    <option value="2">Sales staff</option>
+                                    <option value="3">Managers</option>
+                                    <option value="4">Drivers</option>
+                                    <option value="5">High-skill tech staff</option>
+                                    <option value="6">Accountants</option>
+                                    <option value="7">Medicine staff</option>
+                                    <option value="8">Security staff</option>
+                                    <option value="9">Other Categories</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <h5 class="group-header text-uppercase tracking-wider small">2. Quantitative Financial Balance Metrics</h5>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <label class="form-label fw-semibold" for="AMT_INCOME_TOTAL">Total Gross Income ($)</label>
+                                <input type="number" step="any" class="form-control" id="AMT_INCOME_TOTAL" name="AMT_INCOME_TOTAL" placeholder="e.g. 150000.0" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label fw-semibold" for="CNT_CHILDREN">Count of Dependent Children</label>
+                                <input type="number" class="form-control" id="CNT_CHILDREN" name="CNT_CHILDREN" placeholder="e.g. 0" min="0" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label fw-semibold" for="DAYS_BIRTH">Age Vector Duration (Days)</label>
+                                <input type="number" class="form-control" id="DAYS_BIRTH" name="DAYS_BIRTH" placeholder="Absolute value, e.g. 12000" min="0" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold" for="DAYS_EMPLOYED">Employment Seniority Profile (Days)</label>
+                                <input type="number" class="form-control" id="DAYS_EMPLOYED" name="DAYS_EMPLOYED" placeholder="Absolute value, e.g. 1500" min="0" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold" for="window">Historical Credit Account Record Windows</label>
+                                <input type="number" class="form-control" id="window" name="window" placeholder="Total snapshot months observed" min="1" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+    <label class="form-label">Family Members</label>
+    <input type="number" name="CNT_FAM_MEMBERS" class="form-control" required>
+</div>
+
+<div class="col-md-4">
+    <label class="form-label">Open Month</label>
+    <input type="number" name="open_month" class="form-control" required>
+</div>
+
+<div class="col-md-4">
+    <label class="form-label">End Months</label>
+    <input type="number" name="end_months" class="form-control" required>
+</div>
+                        
+                        <div class="d-flex justify-content-end gap-3 mt-5 pt-3 border-top">
+                            <button type="reset" class="btn btn-light px-4 border">Clear Form Data</button>
+                            <button type="submit" class="btn btn-primary px-5 fw-bold shadow-sm">Compute Machine Learning Prediction</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

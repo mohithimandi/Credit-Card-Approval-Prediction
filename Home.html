@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Approval Engine - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; font-family: 'Segoe UI', system-ui, sans-serif; }
+        .hero-banner { background: linear-gradient(135deg, #113060 0%, #1d4480 100%); color: white; padding: 70px 0; border-radius: 0 0 2rem 2rem; }
+        .scenario-card { border: none; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: transform 0.2s; }
+        .scenario-card:hover { transform: translateY(-3px); }
+    </style>
+</head>
+<body>
+
+    <header class="hero-banner text-center mb-5 shadow-sm">
+        <div class="container">
+            <span class="badge bg-info text-dark mb-2 fw-semibold px-3 py-2 text-uppercase">Automated Decisioning Pipeline</span>
+            <h1 class="display-5 fw-bold">Credit Card Approval Prediction Platform</h1>
+            <p class="lead text-white-50 max-w-2xl mx-auto">Leveraging Multi-Algorithmic Machine Learning Classifiers to Streamline Credit Risk Appraisals</p>
+            <div class="mt-4">
+                <a href="/predict" class="btn btn-light btn-lg fw-bold px-4 text-primary shadow-sm me-2">Access Portal Form &rarr;</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mb-5">
+        
+        <div class="row g-4 mb-5">
+            <div class="col-md-8">
+                <div class="card p-4 h-100 border-0 shadow-sm bg-white">
+                    <h3 class="text-primary fw-bold mb-3">Project Architecture & Scope</h3>
+                    <p class="text-secondary">Financial systems require scalable alternatives to manual checks. This platform converts granular applicant demographics and historical credit balances into high-fidelity evaluations using a serialized predictive engine. The back-end handles data parsing, cleaning feature offsets, and addresses class imbalances dynamically before computing eligibility indices.</p>
+                    
+                    <h5 class="mt-4 fw-bold text-dark">Implemented Engine Algorithms:</h5>
+                    <div class="d-flex flex-wrap gap-2 mt-2">
+                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 fs-6 rounded">Logistic Regression</span>
+                        <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle px-3 py-2 fs-6 rounded">Random Forest Classifier</span>
+                        <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 fs-6 rounded">Gradient Boosting (XGBoost)</span>
+                        <span class="badge bg-warning-subtle text-warning border border-warning-subtle px-3 py-2 fs-6 rounded">Decision Tree Classifier</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-4 h-100 border-0 shadow-sm bg-dark text-white">
+                    <h4 class="fw-bold text-info mb-3">Model Engine Status</h4>
+                    <ul class="list-unstyled m-0">
+                        <li class="mb-3"><strong>Preprocessing:</strong> Categorical Label Encoding mapped cleanly to Python integer vectors.</li>
+                        <li class="mb-3"><strong>Feature Adjustments:</strong> Native negative-offset handling applied across <code>DAYS_BIRTH</code> & <code>DAYS_EMPLOYED</code>.</li>
+                        <li><strong>Platform Integration:</strong> Serialization via Joblib/Pickle connected to real-time Flask triggers.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="fw-bold text-dark mb-4 text-center">Supported Use Case Environments</h3>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card scenario-card p-4 bg-white h-100">
+                    <div class="text-primary fs-3 mb-2">&#128187;</div>
+                    <h5 class="fw-bold">Automated Screening</h5>
+                    <p class="text-muted small m-0">Allows credit analysts to ingest profiles instantly. Minimizes manual assessment errors and flags high-priority prospects immediately.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card scenario-card p-4 bg-white h-100">
+                    <div class="text-danger fs-3 mb-2">&#9888;</div>
+                    <h5 class="fw-bold">Compliance Risk Id</h5>
+                    <p class="text-muted small m-0">Feature logic turns multi-class historical balances into binary classifications, helping risk officers flag high-risk accounts.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card scenario-card p-4 bg-white h-100">
+                    <div class="text-success fs-3 mb-2">&#128100;</div>
+                    <h5 class="fw-bold">Customer Self-Service</h5>
+                    <p class="text-muted small m-0">An external pre-check mechanism that provides immediate transparency into credit eligibility before a hard pull occurs.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="text-center py-4 text-muted mt-5 border-top bg-white">
+        <p class="small m-0">&copy; 2026 Credit Evaluation Node. IBM Watson & Flask Connected Engine.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
